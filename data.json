@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "title": "Burak Öztok",
+    "subtitle": "Lead Developer & Founder of Olivas Technologies",
+    "description": "Siber güvenlik, yazılım geliştirme ve dijital içerik üretimi dünyasında aktif olarak yer alıyorum. Kod yazarken en büyük önceliğim, projelerin siber güvenlik standartlarına uygun, sızdırmaz ve ölçeklenebilir olmasıdır."
+  },
+  "biography": {
+    "name": "Burak Öztok",
+    "title": "Lead Developer & Founder of Olivas Technologies",
+    "location": "Türkiye",
+    "paragraphs": [
+      "Ben Burak. Siber güvenlik, yazılım geliştirme ve dijital içerik üretimi dünyasında aktif olarak yer alıyorum. Kod yazarken en büyük önceliğim, projelerin siber güvenlik standartlarına uygun, sızdırmaz ve ölçeklenebilir olmasıdır.",
+      "Sadece açık bulan bir siber güvenlikçi veya sadece kod yazan bir yazılımcı olmak yerine; siber güvenlik zırhıyla korunan, yapay zeka destekli yenilikçi siber ürünler ve yazılım lisansları (SaaS) üreten bir geliştiriciyim. Yapay zeka kullanımını dikkate alıp Yapay zekayı en iyi şekilde projelerde kullanmayı öğreniyorum."
+    ],
+    "skills": [
+  "Cybersecurity & Pentesting (Web/API)",
+  "Bug Bounty & Vulnerability Assessment",
+  "Secure Code Analysis (OWASP Top 10)",
+  "Backend Development (Node.js & Python)",
+  "Software Architecture & SaaS Development",
+  "Advanced Video Editing & Rendering (DaVinci Resolve)"
+],
+    "experiences": [
+      {
+        "role": "Founder & Lead Developer",
+        "company": "Olivas Technologies",
+        "period": "2026 - Günümüz",
+        "description": "Geliştirdiğimiz tüm yazılım projelerinin, web sitelerinin ve ileride açacağımız tüm alt işlerin tek bir merkezden yönetimini sağlayan ana şirketin kurulması. Şirket bünyesindeki tüm dijital ürünlerin teknik altyapısının tasarlanması ve geliştirme süreçlerinin yönetilmesi."
+      },
+      {
+        "role": "Cybersecurity Analyst & Penetration Tester",
+        "company": "Independent / Freelance",
+        "period": "2023 - 2025",
+        "description": "Web uygulamaları ve API servisleri üzerinde sızma testleri (VAPT). OWASP Top 10 zafiyet analizi ve bug bounty çalışmaları."
+      },
+      {
+        "role": "Founder & Developer",
+        "company": "MTA - Olivas Gaming Freeroam",
+        "period": "2022 - 2023",
+        "description": "LUA ile Script yazılımı, Server yönetimi, Oyuncu topluluğu yönetimi, Reklamcılık Faaliyetleri."
+      }
+    ]
+  },
+  "socialLinks": [
+    {
+      "platform": "github",
+      "url": "https://github.com/pythongoras-dev",
+      "label": "GitHub"
+    },
+    {
+      "platform": "instagram",
+      "url": "https://instagram.com/burakozztok",
+      "label": "Instagram"
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/in/burak-%C3%B6ztok-307110418/",
+      "label": "LinkedIn"
+    },
+    {
+      "platform": "email",
+      "url": "mailto:pythongoras63@gmail.com",
+      "label": "E-posta Gönder"
+    }
+  
+  ]
+} 

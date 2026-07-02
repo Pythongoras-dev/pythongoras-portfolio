@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burak Öztok | Lead Developer & Founder of Olivas Technologies</title>
+    <meta name="description" content="Burak Ö. - Lead Developer & Founder of Olivas Technologies">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        base: '#09090B',
+                        surface: '#18181B',
+                        border: '#27272A',
+                        muted: '#71717A',
+                        accent: '#FF6B00',
+                        accentDim: '#CC5500',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-base text-zinc-300 font-sans antialiased min-h-screen overflow-x-hidden selection:bg-accent/20 selection:text-white">
+    
+    <!-- Custom Cursor -->
+    <div id="cursor" class="fixed w-6 h-6 rounded-full pointer-events-none z-[9999] mix-blend-difference transition-transform duration-100 ease-out" style="background: #FF6B00;"></div>
+    <div id="cursor-dot" class="fixed w-1.5 h-1.5 rounded-full pointer-events-none z-[9999] bg-white"></div>
+    
+    <!-- Loading Screen -->
+    <div id="loader" class="fixed inset-0 z-[9998] bg-base flex items-center justify-center">
+        <div class="text-center">
+            <div class="relative w-20 h-20 mx-auto mb-6">
+                <div class="absolute inset-0 rounded-full border-2 border-accent/20"></div>
+                <div class="absolute inset-0 rounded-full border-2 border-accent border-t-transparent animate-spin"></div>
+                <div class="absolute inset-2 rounded-full border-2 border-accent/40 border-b-transparent animate-spin" style="animation-direction: reverse; animation-duration: 1.5s;"></div>
+            </div>
+            <div class="text-accent font-mono text-sm tracking-widest">YÜKLENİYOR</div>
+        </div>
+    </div>
+    
+    <!-- Animated Background -->
+    <div class="fixed inset-0 -z-10 bg-base"></div>
+    <div class="fixed inset-0 -z-10 opacity-30">
+        <div class="absolute top-0 -left-40 w-96 h-96 bg-accent/20 rounded-full blur-[120px] animate-blob"></div>
+        <div class="absolute top-40 -right-40 w-96 h-96 bg-accent/10 rounded-full blur-[120px] animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-40 left-40 w-96 h-96 bg-accent/15 rounded-full blur-[120px] animate-blob animation-delay-4000"></div>
+    </div>
+    
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-border/50 bg-base/80 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-lg overflow-hidden border border-accent/20 group-hover:border-accent transition-all duration-300">
+                    <img src="./public/images.jpg" alt="Burak Öztok" class="w-full h-full object-cover">
+                </div>
+                <span class="text-white font-semibold tracking-tight text-lg hidden sm:block">Burak Öztok</span>
+            </a>
+            
+            <nav class="flex items-center gap-2">
+                <a href="#about" class="nav-link px-3 py-1.5 rounded-md text-sm text-muted hover:text-white hover:bg-surface transition-all">Hakkımda</a>
+                <a href="#downloads" class="nav-link px-3 py-1.5 rounded-md text-sm text-muted hover:text-white hover:bg-surface transition-all">İndirmeler</a>
+                <a href="mailto:pythongoras63@gmail.com" class="ml-2 px-4 py-1.5 rounded-md text-sm font-medium bg-accent text-white hover:bg-accentDim transition-colors">İletişim</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="relative max-w-6xl mx-auto px-5 md:px-8 py-12 md:py-20">
+        
+        <!-- HERO -->
+        <section id="hero" class="mb-24 animate-fadeIn">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-surface text-xs font-mono text-muted mb-6">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                Yeni projelere açığım ulaşmak için Sosyal Medya adreslerim aşağıda.
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-[1.1]">
+                Merhaba, ben <span id="hero-title" class="text-accent"></span>
+                <span class="inline-block w-1 h-16 md:h-20 bg-accent animate-pulse ml-2"></span>
+            </h1>
+            
+            <p id="hero-subtitle" class="text-xl md:text-2xl text-zinc-400 font-medium mb-6 max-w-2xl">
+                Founder & Lead Developer
+            </p>
+            
+            <p id="hero-description" class="text-base text-muted max-w-2xl leading-relaxed mb-10">
+                Siber güvenlik, yazılım geliştirme ve dijital içerik üretimi dünyasında aktif olarak yer alıyorum. Kod yazarken en büyük önceliğim, projelerin siber güvenlik standartlarına (Secure by Design) uygun, sızdırmaz ve ölçeklenebilir olmasıdır.
+            </p>
+            
+            <div class="flex flex-wrap gap-4">
+                <a href="#downloads" class="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm hover:bg-accentDim transition-all duration-300 shadow-lg shadow-accent/20">
+                    <span>İndirmeleri Gör</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="#about" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-zinc-300 hover:border-accent hover:text-accent transition-all duration-300 text-sm font-medium bg-surface/50">
+                    <i data-lucide="user" class="w-4 h-4"></i>
+                    <span>Ben Kimim?</span>
+                </a>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-10 border-t border-border">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white mb-1"><span class="counter" data-target="50">40</span>+</div>
+                    <div class="text-xs text-muted font-mono">Proje Tamamlandı</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white mb-1"><span class="counter" data-target="0">6</span>+</div>
+                    <div class="text-xs text-muted font-mono">Yıl Deneyim</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Burak Öztok KİMDİR? -->
+        <section id="about" class="mb-24 scroll-reveal">
+            <div class="flex items-center gap-4 mb-10">
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent"></div>
+                <h2 class="text-sm font-mono text-accent uppercase tracking-[0.2em] px-4">Burak Öztok Kimdir?</h2>
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 space-y-8">
+                    <div class="flex items-center gap-5">
+                        <div class="relative flex-shrink-0">
+                            <div class="w-20 h-20 rounded-2xl overflow-hidden border-2 border-accent/20 shadow-lg shadow-accent/10">
+                                <img src="./public/images.jpg" alt="Burak Öztok" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-green-500 border-2 border-base flex items-center justify-center">
+                                <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 id="bio-name" class="text-2xl font-bold text-white">Burak Öztok</h3>
+                            <p id="bio-title" class="text-accent font-mono text-sm mt-1">Lead Developer & Founder of Olivas Technologies
+</p>
+                            <div class="flex items-center gap-1.5 mt-2 text-xs text-muted">
+                                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                                <span id="bio-location">Türkiye</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="bio-paragraphs" class="space-y-4 text-zinc-400 leading-relaxed text-[15px]"></div>
+
+                    <div>
+                        <h4 class="text-xs font-mono text-accent uppercase tracking-widest mb-4 flex items-center gap-2">
+                            <i data-lucide="briefcase" class="w-3.5 h-3.5"></i> Deneyim
+                        </h4>
+                        <div id="experience-container" class="space-y-6 border-l border-border pl-6 ml-1"></div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24 p-6 rounded-2xl border border-border bg-surface/50 backdrop-blur-sm">
+                        <h4 class="text-xs font-mono text-accent uppercase tracking-widest mb-4 flex items-center gap-2">
+                            <i data-lucide="code-2" class="w-3.5 h-3.5"></i> Uzmanlık
+                        </h4>
+                        <div id="skills-container" class="flex flex-wrap gap-2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- İNDİRMELER -->
+        <section id="downloads" class="mb-24 scroll-reveal">
+            <div class="flex items-center gap-4 mb-10">
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent"></div>
+                <h2 class="text-sm font-mono text-accent uppercase tracking-[0.2em] px-4">İndirmeler</h2>
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="p-4 rounded-xl border border-border bg-surface/50">
+                    <div class="text-xs text-muted font-mono uppercase tracking-wider mb-1">Toplam İndirme</div>
+                    <div id="total-downloads" class="text-2xl font-bold text-white">0</div>
+                </div>
+                <div class="p-4 rounded-xl border border-border bg-surface/50">
+                    <div class="text-xs text-muted font-mono uppercase tracking-wider mb-1">Ücretsiz Araçlar</div>
+                    <div id="free-count" class="text-2xl font-bold text-green-400">0</div>
+                </div>
+                <div class="p-4 rounded-xl border border-border bg-surface/50">
+                    <div class="text-xs text-muted font-mono uppercase tracking-wider mb-1">Premium</div>
+                    <div id="premium-count" class="text-2xl font-bold text-accent">0</div>
+                </div>
+                <div class="p-4 rounded-xl border border-border bg-surface/50">
+                    <div class="text-xs text-muted font-mono uppercase tracking-wider mb-1">Toplam Boyut</div>
+                    <div id="total-size" class="text-2xl font-bold text-white">0 MB</div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-4 mb-8">
+                <div class="flex-1 relative">
+                    <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted"></i>
+                    <input type="text" id="download-search" placeholder="Ara..." class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-border bg-surface/50 text-zinc-300 text-sm focus:outline-none focus:border-accent transition-colors">
+                </div>
+                
+                <div class="flex gap-2 flex-wrap">
+                    <button class="download-filter-btn active px-4 py-2 rounded-lg border border-border bg-surface/50 text-zinc-300 text-xs font-medium hover:border-accent hover:text-accent transition-all" data-filter="all">Tümü</button>
+                    <button class="download-filter-btn px-4 py-2 rounded-lg border border-border bg-surface/50 text-zinc-300 text-xs font-medium hover:border-accent hover:text-accent transition-all" data-filter="free">Ücretsiz</button>
+                    <button class="download-filter-btn px-4 py-2 rounded-lg border border-border bg-surface/50 text-zinc-300 text-xs font-medium hover:border-accent hover:text-accent transition-all" data-filter="tools">Araçlar</button>
+                    <button class="download-filter-btn px-4 py-2 rounded-lg border border-border bg-surface/50 text-zinc-300 text-xs font-medium hover:border-accent hover:text-accent transition-all" data-filter="scripts">Scriptler</button>
+                </div>
+                
+                <div class="flex gap-1 border border-border rounded-lg overflow-hidden">
+                    <button id="grid-view-btn" class="view-toggle-btn active px-3 py-2 bg-surface/50 text-zinc-300 hover:bg-accent hover:text-white transition-all" title="Grid Görünüm">
+                        <i data-lucide="grid-3x3" class="w-4 h-4"></i>
+                    </button>
+                    <button id="list-view-btn" class="view-toggle-btn px-3 py-2 bg-surface/50 text-zinc-300 hover:bg-accent hover:text-white transition-all" title="Liste Görünüm">
+                        <i data-lucide="list" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="downloads-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="border-t border-border pt-16 pb-10 scroll-reveal">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col items-center text-center mb-12">
+                    <div class="relative mb-6">
+                        <img src="./public/images.jpg" alt="Burak Öztok" class="w-32 h-32 rounded-full object-cover border-4 border-accent/20 shadow-2xl shadow-accent/10">
+                        <div class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-green-500 border-4 border-base flex items-center justify-center">
+                            <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-3xl font-bold text-white mb-3">Birlikte çalışalım mı?</h3>
+                    <p class="text-muted text-lg max-w-xl">Siber güvenlik veya Yazılım projeleri için bana ulaşın.</p>
+                </div>
+                
+                <div id="social-links" class="flex flex-wrap justify-center gap-4 mb-12"></div>
+
+                <div class="text-center text-xs text-muted/50 font-mono pt-8 border-t border-border/50">
+                    © 2026 Olivas Technologies. Tüm hakları saklıdır.
+                </div>
+            </div>
+        </footer>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
